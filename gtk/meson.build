@@ -815,6 +815,7 @@ endif
 
 libgtk = shared_library('gtk',
   gtk_sources,
+  typefuncs,
   gtkmarshal_h,
   c_args: [
     '-DGTK_COMPILATION', '-DGTK_PRINT_BACKEND_ENABLE_UNSUPPORTED',
@@ -836,6 +837,6 @@ libgtk_dep = declare_dependency(
     gtktypebuiltins_h,
   ],
   dependencies: gtk_deps,
-  link_with: libgtk,
+  link_with: [libgtk, libgdk],
   include_directories: [confinc, gtkinc]
 )

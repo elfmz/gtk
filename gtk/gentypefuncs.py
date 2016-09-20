@@ -31,6 +31,7 @@ for filename in in_files:
           if debug: print ('Found ', func)
 
 file_output = 'G_GNUC_BEGIN_IGNORE_DEPRECATIONS\n'
+file_output = '\n'
 
 funcs = sorted(funcs)
 
